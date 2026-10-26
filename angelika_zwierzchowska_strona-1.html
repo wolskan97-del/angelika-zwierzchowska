@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Angelika Zwierzchowska — behawiorystyka, szkolenie psów i salon groomerski.">
+<title>Angelika Zwierzchowska | Psiaki z klasą</title>
+<style>
+:root{--ink:#26352d;--green:#496b55;--mint:#eaf2e8;--cream:#fffaf1;--peach:#f2c8a9;--gold:#c58c45;--white:#fff}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--ink);line-height:1.65}
+header{background:linear-gradient(120deg,rgba(31,54,40,.88),rgba(73,107,85,.72)),url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1800&q=85') center/cover;color:white;min-height:560px;display:flex;flex-direction:column}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:20px 7%;gap:20px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:1.12rem;letter-spacing:.3px}.logo span{color:#ffd8b6}
+nav{display:flex;gap:9px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;padding:8px 12px;border-radius:20px;font-size:.94rem}
+nav a:hover,nav a:focus{background:rgba(255,255,255,.2)}
+.hero{max-width:850px;padding:70px 8% 90px}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:.8rem;color:#ffe0c5;font-weight:bold}
+h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.06;margin:15px 0}
+.hero p{font-size:1.15rem;max-width:620px}
+.btn{display:inline-block;border:0;border-radius:30px;background:var(--peach);color:#26352d;text-decoration:none;padding:13px 22px;font-weight:bold;cursor:pointer;margin:8px 8px 0 0;transition:.2s}
+.btn:hover{transform:translateY(-2px);background:#ffd9bd}
+.btn.outline{background:transparent;color:white;border:2px solid white}
+main{max-width:1180px;margin:auto;padding:0 22px}
+section{padding:72px 0;scroll-margin-top:20px}
+.section-title{text-align:center;margin-bottom:34px}
+.section-title .tag{color:var(--gold);font-weight:bold;letter-spacing:2px;text-transform:uppercase;font-size:.8rem}
+h2{font-size:clamp(1.9rem,4vw,3rem);line-height:1.2;margin:8px 0 12px}
+.section-title p{max-width:650px;margin:0 auto;color:#657168}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:white;border:1px solid #e2e8df;border-radius:20px;overflow:hidden;box-shadow:0 8px 24px #26352d0c}
+.card img{width:100%;height:220px;object-fit:cover;display:block}
+.card-content{padding:22px}
+.card h3{margin:0 0 8px;color:var(--green)}
+.badge{display:inline-block;background:var(--mint);color:var(--green);padding:5px 11px;border-radius:20px;font-size:.8rem;font-weight:bold}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about img{width:100%;height:420px;object-fit:cover;border-radius:24px;border:7px solid white;box-shadow:0 10px 30px #26352d18}
+.about-text{background:white;border:1px solid #e2e8df;border-radius:24px;padding:30px}
+.about-text p{margin-top:0}
+.highlight{color:var(--green);font-weight:bold}
+.fact-list{counter-reset:facts;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.fact{counter-increment:facts;background:white;border:1px solid #e2e8df;border-radius:16px;padding:20px 20px 20px 68px;position:relative}
+.fact:before{content:counter(facts);position:absolute;left:20px;top:19px;width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:var(--green);color:white;font-weight:bold}
+.fact:last-child{grid-column:1/-1}
+.services{background:var(--mint);border-radius:28px;padding:45px 28px}
+.service-icon{font-size:2rem}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery figure{margin:0;position:relative;overflow:hidden;border-radius:18px;border:4px solid white;box-shadow:0 6px 18px #26352d12}
+.gallery img{width:100%;height:260px;object-fit:cover;display:block;transition:transform .35s}
+.gallery figure:hover img{transform:scale(1.05)}
+.gallery figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(20,35,25,.88));color:white;padding:30px 15px 14px;font-weight:bold}
+.booking-wrap{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.panel{background:white;border:1px solid #e2e8df;border-radius:22px;padding:28px;box-shadow:0 8px 24px #26352d0c}
+label{display:block;font-weight:bold;margin:13px 0 5px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #cbd6ca;border-radius:10px;font:inherit;background:#fffefa;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:3px solid #d9e9d9;border-color:var(--green)}
+.small{font-size:.88rem;color:#6a756d}
+.contact-line{padding:13px 0;border-bottom:1px solid #e9eee7}
+.contact-line:last-child{border-bottom:0}
+.contact-line strong{display:block;color:var(--green)}
+footer{background:#26352d;color:white;padding:32px 7%;text-align:center}
+footer a{color:#ffd8b6}
+.notice{background:#fff1e5;border-left:4px solid var(--gold);padding:12px 15px;border-radius:8px;font-size:.9rem}
+#confirmation{display:none;background:#eaf5e8;padding:14px;border-radius:10px;margin-top:15px;border:1px solid #c6ddc3}
+@media(max-width:800px){.grid,.gallery{grid-template-columns:repeat(2,1fr)}.about,.booking-wrap{grid-template-columns:1fr}.about img{height:320px}.hero{padding-top:55px}}
+@media(max-width:540px){.grid,.gallery,.fact-list{grid-template-columns:1fr}.fact:last-child{grid-column:auto}.topbar{padding:18px 5%}.hero{padding-left:6%;padding-right:6%}nav a{padding:7px 9px}.services{padding:30px 18px}}
+</style>
+</head>
+<body>
+<header id="start">
+  <div class="topbar">
+    <div class="logo">🐾 Angelika <span>Zwierzchowska</span></div>
+    <nav aria-label="Menu główne">
+      <a href="#o-mnie">O mnie</a><a href="#uslugi">Usługi</a><a href="#ciekawostki">Ciekawostki</a><a href="#galeria">Galeria</a><a href="#informacje">Informacje</a>
+    </nav>
+  </div>
+  <div class="hero">
+    <div class="eyebrow">Miłość • cierpliwość • zaufanie</div>
+    <h1>Szczęśliwy pies,<br>szczęśliwy opiekun.</h1>
+    <p>Behawiorystyka, szkolenie psów i pielęgnacja w przyjaznej atmosferze. Razem budujemy relację opartą na zaufaniu — krok po kroku, łapa po łapie.</p>
+    <a class="btn" href="#informacje">Umów wizytę</a>
+    <a class="btn outline" href="#uslugi">Poznaj ofertę</a>
+  </div>
+</header>
+<main>
+<section id="o-mnie">
+  <div class="about">
+    <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=85" alt="Uśmiechnięty pies na spacerze">
+    <div class="about-text">
+      <span class="badge">Poznajmy się!</span>
+      <h2>Hej, tu Angelika!</h2>
+      <p>Hej mam na imię Angelika i odkąd pamiętam, psy są częścią mojego życia i codzienności. Praca z nimi to dla mnie czysta przyjemność, a każdy merdający ogon przypomina mi, jak wyjątkowa jest więź między człowiekiem a psem.</p>
+      <p>Wierzę, że każdy pies ma swój charakter, potrzeby i tempo nauki. Dlatego stawiam na <span class="highlight">cierpliwość, pozytywne wzmocnienie i indywidualne podejście</span>. Chcę pomagać opiekunom lepiej rozumieć swoich pupili, wspierać ich w codziennych wyzwaniach i dbać o to, by czuli się bezpiecznie — także podczas pielęgnacji.</p>
+      <p>Moim celem jest, aby każdy psiak wychodził ode mnie spokojniejszy, zadbany i szczęśliwy. 🐶</p>
+      <a class="btn" href="#informacje">Skontaktuj się ze mną</a>
+    </div>
+  </div>
+</section>
+<section id="uslugi">
+  <div class="section-title"><div class="tag">Co możemy zrobić razem?</div><h2>Usługi dla Twojego pupila</h2><p>Indywidualne podejście i spokojna atmosfera — bo każdy pies zasługuje na troskę.</p></div>
+  <div class="grid">
+    <article class="card"><img src="https://images.unsplash.com/photo-1551717743-49959800b1f6?auto=format&fit=crop&w=900&q=85" alt="Pies podczas treningu z opiekunem"><div class="card-content"><span class="badge">Nauka przez zabawę</span><h3>Szkolenie psów</h3><p>Podstawowe komendy, przywołanie, chodzenie na luźnej smyczy i dobre psie maniery. Ćwiczymy w tempie dopasowanym do psa.</p></div></article>
+    <article class="card"><img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=85" alt="Pies odpoczywający po spacerze"><div class="card-content"><span class="badge">Lepsze zrozumienie</span><h3>Konsultacje behawioralne</h3><p>Wsparcie w zrozumieniu psich emocji i zachowań, takich jak lęk, nadmierne szczekanie czy trudności na spacerach.</p></div></article>
+    <article class="card"><img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=900&q=85" alt="Pies podczas pielęgnacji"><div class="card-content"><span class="badge">Pielęgnacja z troską</span><h3>Salon groomerski</h3><p>Kąpiel, suszenie, czesanie i pielęgnacja sierści. Dbamy o komfort pupila, robimy przerwy i nie spieszymy się bez potrzeby.</p></div></article>
+  </div>
+</section>
+<section id="ciekawostki">
+  <div class="section-title"><div class="tag">Psia wiedza w pigułce</div><h2>5 ciekawostek o psach</h2><p>Poznaj swojego czworonożnego przyjaciela jeszcze lepiej!</p></div>
+  <div class="fact-list">
+    <div class="fact"><strong>Psy mają niezwykły węch.</strong><br>Ich nos pomaga im poznawać świat, dlatego węszenie to świetna forma aktywności umysłowej.</div>
+    <div class="fact"><strong>Mowa ciała ma znaczenie.</strong><br>Ułożenie uszu, ogona i całego ciała może wiele powiedzieć o emocjach psa — zawsze patrz na cały kontekst.</div>
+    <div class="fact"><strong>Nauka może być zabawą.</strong><br>Krótkie, regularne sesje treningowe często sprawdzają się lepiej niż jedno długie ćwiczenie.</div>
+    <div class="fact"><strong>Odpoczynek jest ważny.</strong><br>Szczenięta i dorosłe psy potrzebują odpowiedniej ilości snu oraz spokojnego miejsca do regeneracji.</div>
+    <div class="fact"><strong>Każdy pies jest inny.</strong><br>Rasa może podpowiedzieć pewne tendencje, ale temperament, doświadczenia i potrzeby konkretnego psa są równie ważne.</div>
+  </div>
+</section>
+<section class="services" id="porady">
+  <div class="section-title"><div class="tag">Małe kroki, wielkie efekty</div><h2>Psie ABC — dobre nawyki</h2></div>
+  <div class="grid">
+    <div><div class="service-icon">🦴</div><h3>Nagradzaj dobre zachowanie</h3><p>Smakołyk, pochwała lub zabawa mogą pomóc psu zrozumieć, które zachowanie warto powtarzać.</p></div>
+    <div><div class="service-icon">🐕</div><h3>Daj czas na poznawanie</h3><p>Nowe miejsca i sytuacje wprowadzaj stopniowo, szanując komfort i sygnały wysyłane przez psa.</p></div>
+    <div><div class="service-icon">💚</div><h3>Buduj zaufanie</h3><p>Spokój, przewidywalność i konsekwencja pomagają tworzyć bezpieczną relację z pupilem.</p></div>
+  </div>
+</section>
+<section id="galeria">
+  <div class="section-title"><div class="tag">Psie chwile</div><h2>Galeria treningów i pielęgnacji</h2><p>Trochę ruchu, trochę nauki i mnóstwo merdających ogonów.</p></div>
+  <div class="gallery">
+    <figure><img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=85" alt="Dwa psy bawiące się na trawie"><figcaption>Wspólna zabawa</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1551717743-49959800b1f6?auto=format&fit=crop&w=900&q=85" alt="Trening psa z człowiekiem"><figcaption>Trening i skupienie</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&w=900&q=85" alt="Pies gotowy na spacer"><figcaption>Aktywny spacer</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=900&q=85" alt="Pielęgnacja psa"><figcaption>Chwila pielęgnacji</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=900&q=85" alt="Wesoły pies z wystawionym językiem"><figcaption>Uśmiech po treningu</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=900&q=85" alt="Pies odpoczywający na świeżym powietrzu"><figcaption>Zasłużony odpoczynek</figcaption></figure>
+  </div>
+  <p class="small">Zdjęcia poglądowe z internetu, ładowane z serwisu Unsplash. Do wersji docelowej możesz dodać własne fotografie.</p>
+</section>
+<section id="informacje">
+  <div class="section-title"><div class="tag">Jesteśmy w kontakcie</div><h2>Informacje i umawianie wizyt</h2><p>Wybierz dogodny termin w formularzu — to demonstracyjny kalendarz na potrzeby projektu.</p></div>
+  <div class="booking-wrap">
+    <div class="panel">
+      <h3>📅 Umów wizytę</h3>
+      <form id="bookingForm">
+        <label for="name">Imię opiekuna</label><input id="name" name="name" required placeholder="Np. Anna">
+        <label for="dog">Imię psa</label><input id="dog" name="dog" required placeholder="Np. Luna">
+        <label for="service">Wybierz usługę</label><select id="service" name="service" required><option value="">— Wybierz —</option><option>Szkolenie psa</option><option>Konsultacja behawioralna</option><option>Wizyta groomerska</option></select>
+        <label for="date">Data wizyty</label><input type="date" id="date" name="date" required>
+        <label for="time">Godzina</label><select id="time" name="time" required><option value="">— Wybierz godzinę —</option><option>09:00</option><option>10:00</option><option>11:00</option><option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option></select>
+        <label for="notes">Dodatkowe informacje (opcjonalnie)</label><textarea id="notes" name="notes" rows="3" placeholder="Napisz kilka słów o swoim psiaku..."></textarea>
+        <button class="btn" type="submit">Zgłoś termin</button>
+        <div id="confirmation" role="status"></div>
+      </form>
+      <p class="small">Formularz pokazuje potwierdzenie na stronie, ale nie wysyła rezerwacji do prawdziwego salonu.</p>
+    </div>
+    <div class="panel">
+      <h3>📍 Dane kontaktowe</h3>
+      <div class="contact-line"><strong>Imię i nazwisko</strong>Angelika Zwierzchowska</div>
+      <div class="contact-line"><strong>Telefon</strong><a href="tel:+48500123456">500 123 456</a></div>
+      <div class="contact-line"><strong>E-mail</strong><a href="mailto:angelika.zwierzchowska@example.com">angelika.zwierzchowska@example.com</a></div>
+      <div class="contact-line"><strong>Godziny pracy</strong>Poniedziałek–piątek: 9:00–17:00<br>Sobota: 10:00–14:00</div>
+      <div class="contact-line"><strong>Media społecznościowe</strong><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></div>
+      <p class="notice">Uwaga: telefon i e-mail są przykładowe, przygotowane do szkolnego projektu. Przed prawdziwą publikacją należy wpisać własne dane.</p>
+      <button class="btn" type="button" id="copyLink">🔗 Kopiuj adres tej strony</button>
+      <p id="copyStatus" class="small" aria-live="polite">Po opublikowaniu strony przycisk skopiuje jej publiczny adres.</p>
+    </div>
+  </div>
+</section>
+<section id="faq">
+  <div class="section-title"><div class="tag">Masz pytanie?</div><h2>Najczęstsze pytania</h2></div>
+  <div class="grid">
+    <article class="card"><div class="card-content"><h3>Od jakiego wieku można szkolić psa?</h3><p>Naukę prostych zachowań można zacząć już ze szczeniakiem, dostosowując ćwiczenia do wieku i możliwości.</p></div></article>
+    <article class="card"><div class="card-content"><h3>Czy trzeba coś zabrać na trening?</h3><p>Warto mieć smycz, wodę i małe, lubiane przez psa przysmaki. Szczegóły można ustalić przed spotkaniem.</p></div></article>
+    <article class="card"><div class="card-content"><h3>Jak przygotować psa do groomera?</h3><p>Pomagają spokojne, krótkie przyzwyczajanie do dotyku, szczotki i dźwięków. Nie zmuszaj psa do kontaktu, jeśli bardzo się boi.</p></div></article>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="logo">🐾 Angelika Zwierzchowska</div>
+  <p>„Dobre relacje zaczynają się od zrozumienia.”</p>
+  <p>© <span id="year"></span> Angelika Zwierzchowska · Strona edukacyjna</p>
+  <a href="#start">Wróć na górę ↑</a>
+</footer>
+<script>
+const dateInput=document.getElementById('date');
+const today=new Date(); today.setMinutes(today.getMinutes()-today.getTimezoneOffset());
+dateInput.min=today.toISOString().slice(0,10);
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('bookingForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const name=document.getElementById('name').value.trim();
+ const dog=document.getElementById('dog').value.trim();
+ const service=document.getElementById('service').value;
+ const date=document.getElementById('date').value;
+ const time=document.getElementById('time').value;
+ const formatted=new Date(date+'T12:00:00').toLocaleDateString('pl-PL',{day:'numeric',month:'long',year:'numeric'});
+ const box=document.getElementById('confirmation');
+ box.style.display='block';
+ box.textContent=`Dziękujemy, ${name}! To demonstracyjne zgłoszenie: ${service} dla psa ${dog}, ${formatted} o ${time}. Aby potwierdzić prawdziwą wizytę, skontaktuj się telefonicznie lub e-mailowo.`;
+});
+document.getElementById('copyLink').addEventListener('click',async function(){
+ const status=document.getElementById('copyStatus');
+ try{
+   await navigator.clipboard.writeText(window.location.href);
+   status.textContent='Adres strony został skopiowany! Możesz wkleić go w wiadomości.';
+ }catch(err){
+   status.textContent='Adres tej strony: '+window.location.href+' — zaznacz go i skopiuj. Aby nauczycielka mogła otworzyć stronę, opublikuj plik w internecie.';
+ }
+});
+</script>
+</body>
+</html>
